@@ -63,8 +63,9 @@ contract Ballot  {
     function startPoll(address _code, bytes4 _sig, bytes[] memory _datas)
         public
         onlyAuth
-	finishPoll
-        returns (uint256 pollID) {
+		finishPoll
+        returns (uint256 pollID) 
+		{
             require(_code != address(0), "address 0 not valid");
 			require(_datas.length > 0, "at least should be one option");
             require(isValidPoll(_code, _sig, _datas), "invalid poll");

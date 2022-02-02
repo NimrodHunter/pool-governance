@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Roles.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Roles.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>27/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>27/27</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.0;
+&nbsp;
+import "./Authority.sol";
+&nbsp;
+/**
+ * @title Roles
+ * @notice Facilitates access to lists of user roles and capabilities.
+ * @author Anibal Catalán &lt;anibalcatalanf@gmail.com&gt;.
+ *
+ * Originally base on code by DappHub.
+ * https://github.com/dapphub/ds-roles/blob/master/src/roles.sol
+ *
+*/
+&nbsp;
+contract Roles is Auth {
+    mapping(address =&gt; bytes32) public userRoles;
+    mapping(address =&gt; mapping(bytes4 =&gt; bytes32)) public capabilityRoles;
+    mapping(address =&gt; mapping(bytes4 =&gt; bool)) public publicCapabilities;
+    
+    event LogSetUserRole(address indexed who, bytes32 roles);
+    event LogSetPublicCapability(address indexed code, bytes4 signature, bool enabled);
+    event LogSetRoleCapability(address indexed code, bytes4 signature, bytes32 roles);
+&nbsp;
+    constructor() public {
+        setAuthority(address(this));
+    }
+&nbsp;
+    /**
+     * @notice Define User rol.
+     * @param who user address from which will be defined the role.
+     * @param role it is the rol to be defined.
+     * @param enabled boolean that represent the definition.
+     */
+    function setUserRole(address who, uint8 role, bool enabled) public onlyAuth {
+        bytes32 lastRoles = userRoles[who];
+        bytes32 shifted = bytes32(uint256(uint256(2) ** uint256(role)));
+        if (enabled) {
+            userRoles[who] = lastRoles | shifted;
+        } else {
+            userRoles[who] = lastRoles &amp; bitNot(shifted);
+        }
+        emit LogSetUserRole(who, userRoles[who]);
+    }
+    
+    /**
+     * @notice Define public access to a function into a contract.
+     * @param code address contract where the access to a function will be defined.
+     * @param sig function signature where the access will be defined.
+     * @param enabled boolean that represent the definition.
+     */
+    function setPublicCapability(address code, bytes4 sig, bool enabled) public onlyAuth {
+        publicCapabilities[code][sig] = enabled;
+        emit LogSetPublicCapability(code, sig, enabled);
+    }
+&nbsp;
+    /**
+     * @notice Define the access capabilities of some role to some function into a contract.
+     * @param role it is the role which will be defined the access capabilities.
+     * @param code address contract where the access to a function will be defined.
+     * @param sig function signature where the access will be defined.
+     * @param enabled boolean that represent the definition.
+     */
+    function setRoleCapability(uint8 role, address code, bytes4 sig, bool enabled) public onlyAuth {
+        bytes32 lastRoles = capabilityRoles[code][sig];
+        bytes32 shifted = bytes32(uint256(uint256(2) ** uint256(role)));
+        if (enabled) {
+            capabilityRoles[code][sig] = lastRoles | shifted;
+        } else {
+            capabilityRoles[code][sig] = lastRoles &amp; bitNot(shifted);
+        }
+        emit LogSetRoleCapability(code, sig, capabilityRoles[code][sig]);
+    }
+    
+    /**
+     * @notice Return the roles of some address.
+     * @param who user address from which the roles are returned.
+     */
+    function getUserRoles(address who) public view returns(bytes32) {
+        return userRoles[who];
+    }
+    
+    /**
+     * @notice Return roles capables to call a function inside a contract.
+     * @param code address contract by which one asks.
+     * @param sig function signature by which one asks.
+     */
+    function getCapabilityRoles(address code, bytes4 sig) public view returns(bytes32) {
+        return capabilityRoles[code][sig];
+    }
+    
+    /**
+     * @notice Return if some function into  contract have public access.
+     * @param code address contract by which one asks.
+     * @param sig function signature by which one asks.
+     */
+    function isCapabilityPublic(address code, bytes4 sig) public view returns(bool) {
+        return publicCapabilities[code][sig];
+    }
+        
+    /**
+     * @notice Check if and user have some role
+     * @param who user address by which one asks.
+     * @param role it is the role by which one asks.
+     */
+    function hasUserRole(address who, uint8 role) public view returns(bool) {
+        bytes32 roles = getUserRoles(who);
+        bytes32 shifted = bytes32(uint256(uint256(2) ** uint256(role)));
+        return bytes32(0) != roles &amp; shifted;
+    }
+    
+    /**
+     * @notice Verify if the caller can access to a function into a contract.
+     * @param caller user address by which one asks.
+     * @param code address contract by which one asks.
+     * @param sig function signature by which one asks.
+     */
+    function canCall(address caller, address code, bytes4 sig) public view returns(bool) {
+        if (isCapabilityPublic(code, sig)) {
+            return true;
+        } else {
+            bytes32 hasRoles = getUserRoles(caller);
+            bytes32 needsOneOf = getCapabilityRoles(code, sig);
+            return bytes32(0) != hasRoles &amp; needsOneOf;
+        }
+    
+    }
+&nbsp;
+    /**
+     * @notice Negation btiwise operation.
+     * @param input bytes to be negated.
+     */
+    function bitNot(bytes32 input) internal pure returns(bytes32) {
+        return input ^ bytes32(uint256(-1));
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jul 30 2019 06:25:37 GMT-0400 (Chile Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

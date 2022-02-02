@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Ballot.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Ballot.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>50/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.22% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>17/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.89% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>56/63</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.0;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import "./Roles.sol";
+import "./Pool.sol";
+import "./DLL.sol";
+import "./configuration/BallotConfiguration.sol";
+import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
+&nbsp;
+contract Ballot  {
+    using SafeMath for uint256;
+    using DLL for DLL.Data;
+&nbsp;
+    uint256 constant public INITIAL_POLL_NONCE = 0;
+    uint256 public pollNonce;
+&nbsp;
+    // Poll params
+    mapping(uint256 =&gt; Poll) public pollMap; // maps pollID to Poll struct.
+    DLL.Data public dllPolls; // list of active polls.
+&nbsp;
+    BallotConfiguration configuration;
+&nbsp;
+    struct Poll {
+        uint256 endDate; // poll expiration.
+        uint256 winningOption; // result of the poll.
+        uint256 executedTimestamp; // timestamp when the winning option was executed.
+        mapping(uint256 =&gt; uint256) votesTally; //tally of votes of different options.
+        mapping(address =&gt; uint256) voteOptions; // stores the voteOption of an address.
+        address code; // smart contract to be called.
+        bytes4 sig; // function signature to be triggered.
+        bytes[] datas; // different options to be use as parameter.
+    }
+&nbsp;
+    event LogPollCreated(uint256 endDate, bytes[] datas, uint256 indexed pollID, address indexed creator);
+    event LogVote(address indexed voter, uint256 indexed pollID, uint256 option, uint256 votes);
+    event LogPollEnded(uint256 indexed pollID, uint256 winningOption, uint256 winningPercentage, bool executed);
+&nbsp;
+    constructor(address _configuration) public {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_configuration != address(0), "address 0 not valid"); 
+        configuration = BallotConfiguration(_configuration);
+        pollNonce = INITIAL_POLL_NONCE;
+    }
+&nbsp;
+    modifier onlyAuth {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(Roles(configuration.getRoles()).isAuthorized(msg.sender, address(this), msg.sig), "unauthorized function call");
+        _;
+    }
+&nbsp;
+    /**
+     * @notice Start a new poll, the poll will determine which call will be done by the voting contract, only can be one poll active at once.
+     * @param _code It is the smart contract address to be called.
+     * @param _sig It is the smart contract function signature, related with the function to be executed.
+     * @param _datas It is the data option to be chosen in the poll, this data will be the msg.data of next call to be executed.
+                                 
+     * @return pollID  poll identifier.                                                       
+     */      
+    function startPoll(address _code, bytes4 _sig, bytes[] memory _datas)
+        public
+        onlyAuth
+        returns (uint256 pollID) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(_code != address(0), "address 0 not valid");
+			<span class="missing-if-branch" title="else path not taken" >E</span>require(_datas.length &gt; 0, "at least should be one option");
+            <span class="missing-if-branch" title="else path not taken" >E</span>require(isValidPoll(_code, _sig, _datas), "invalid poll");
+            
+            uint256 pollDuration = Pool(configuration.getPool()).getPollDuration(msg.sender, _code, _sig, _datas);
+			
+			pollNonce = pollNonce + 1;
+			uint256 _endDate = block.timestamp.add(pollDuration);
+&nbsp;
+			pollMap[pollNonce] = Poll({
+				endDate: _endDate,
+				winningOption: 0,
+				executedTimestamp: 0,
+				code: _code,
+                sig: _sig,
+				datas: _datas
+			});
+&nbsp;
+			insertPoll(pollNonce);
+&nbsp;
+			emit LogPollCreated(_endDate, _datas, pollNonce, msg.sender);
+			return pollNonce;
+        }
+&nbsp;
+	/**
+     * @notice vote for the current poll.
+     * @param pollID poll identifier.
+     * @param option poll option chosen by the user.
+     */  
+    function vote(uint256 pollID, uint256 option) public onlyAuth {
+        Poll storage poll = pollMap[pollID];
+        
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(pollExists(pollID) &amp;&amp; !pollExpired(pollID), "invalid poll");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(option &lt;= poll.datas.length, "option out of range");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(poll.voteOptions[msg.sender] == 0, "user already voted");
+         
+        uint256 voteCount = Pool(configuration.getPool()).getVoteWeight(msg.sender, poll.code, poll.sig, poll.datas);
+        poll.voteOptions[msg.sender] = option;
+        poll.votesTally[option] = poll.votesTally[option].add(voteCount);
+        emit LogVote(msg.sender, pollID, option, voteCount);
+    }
+&nbsp;
+	/**
+	 * @notice Ends the poll with the first end date and execute the transaction chosen.
+	 */
+	function endPoll() public {
+		uint256 pollID = dllPolls.first;
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (pollExpired(pollID)) {
+			Poll storage poll = pollMap[pollID];
+			uint256 temporalWinning;
+			uint256 total;
+			for (uint256 i = 0; i &lt;= poll.datas.length; i++) {
+				if (poll.votesTally[i] &gt; temporalWinning) {
+					temporalWinning = poll.votesTally[i];
+					poll.winningOption = i;
+				}
+				total = total.add(poll.votesTally[i]);
+			}
+			uint256 winingPercentage = temporalWinning.mul(10000).div(total);
+			<span class="missing-if-branch" title="else path not taken" >E</span>if (winingPercentage &gt; Pool(configuration.getPool()).getQuorum(poll.code, poll.sig, poll.datas) &amp;&amp; poll.winningOption != 0) {
+				<span class="missing-if-branch" title="else path not taken" >E</span>require(executeResult(pollID, gasleft()), "call execution fail");
+				poll.executedTimestamp = block.timestamp;
+			}
+			dllPolls.remove(pollID);
+			emit LogPollEnded(pollID, poll.winningOption, winingPercentage, poll.executedTimestamp != 0);
+		}
+	} 
+&nbsp;
+    /**
+     * @notice Verify if the poll exists.
+     * @param pollID identifier of the poll.
+     * @return true if the poll exist.
+     */
+    function pollExists(uint256 pollID) public view returns (bool) {
+		return (pollID != 0 &amp;&amp; pollID &lt;= pollNonce);
+	}
+&nbsp;
+	/**
+	 * @notice Verify if the poll expired.
+	 * @param pollID identifier of the poll.
+	 * @return true if the poll expired.
+	 */
+	function pollExpired(uint256 pollID) public view returns (bool) {
+		return (pollExists(pollID) &amp;&amp; pollMap[pollID].endDate &lt; block.timestamp);
+	}
+&nbsp;
+	/**
+	 * @notice Verify if the poll winning option was executed.
+	 * @param pollID identifier of the poll.
+	 * @return true if the poll was executed.
+	 */
+	function pollExecuted(uint256 pollID) public view returns (bool) {
+		return (pollMap[pollID].executedTimestamp != 0);
+	}
+&nbsp;
+	/**
+	 * @notice Insert a poll to the active polls list, it is ordered by its duration.                     
+     * @param pollID poll identifier.                                                                     
+     */
+	function insertPoll(uint256 pollID) internal {
+		uint256 maxActivePolls = configuration.getMaxActivePolls();
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (maxActivePolls &gt; 0) {
+			<span class="missing-if-branch" title="else path not taken" >E</span>require(dllPolls.count &lt; maxActivePolls, "too many polls");
+		}
+&nbsp;
+		Poll memory newPoll = pollMap[pollID];
+		uint256 currentPoll = dllPolls.last;
+		
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (dllPolls.count == 0) {
+			dllPolls.insert(0, pollID, 0);
+		} else <span class="cstat-no" title="statement not covered" >if (newPoll.endDate &lt; pollMap[dllPolls.first].endDate) {</span>
+			dllPolls.insert(0, pollID, dllPolls.first);
+		} else {
+<span class="cstat-no" title="statement not covered" >			for (uint256 i = dllPolls.count; i &gt; 0; i--) {</span>
+<span class="cstat-no" title="statement not covered" >				if (newPoll.endDate &gt;= pollMap[currentPoll].endDate) {</span>
+<span class="cstat-no" title="statement not covered" >					uint256 next = dllPolls.getNext(currentPoll)</span>;
+					dllPolls.insert(currentPoll, pollID, next);
+					break;
+				}
+<span class="cstat-no" title="statement not covered" >				currentPoll = dllPolls.getPrev(currentPoll)</span>;
+			}
+		}
+	}
+&nbsp;
+	/**
+	 * @notice Execute the poll results.
+	 * @param pollID poll identifier.
+	 * @param txGas transaction gas needed to execute the transaction chosen.
+	 * @return success true winning poll call was executed.
+	 */
+	function executeResult(uint256 pollID, uint256 txGas) internal returns (bool success) {
+		Poll memory poll = pollMap[pollID];
+		address code = poll.code;
+		uint256 winningOption = poll.winningOption.sub(1);
+		bytes memory data = poll.datas[winningOption];
+		/* solhint-disable indent */
+		assembly {
+			success := call
+			(
+				txGas,
+				code,
+				0,
+				add(data, 0x20),
+				mload(data),
+				0,
+				0
+			)
+		}
+	}
+&nbsp;
+    function isValidPoll(address _code, bytes4 _sig, bytes[] memory _datas) internal view returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(Pool(configuration.getPool()).isValidPoll(msg.sender, _code, _sig, _datas), "invalid poll");   
+        return true;
+    }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jul 30 2019 06:25:37 GMT-0400 (Chile Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

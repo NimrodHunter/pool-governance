@@ -1,0 +1,38 @@
+{
+  "name": "governance",
+  "version": "0.0.1",
+  "description": "Smart contracts for governance Lending Pools",
+  "repository": "",
+  "licence": "MIT",
+  "scripts": {
+    "compile": "./node_modules/.bin/truffle compile",
+    "test": "./node_modules/.bin/truffle test",
+    "migrate": "./node_modules/.bin/truffle migrate --network in_memory",
+    "deploy": "./node_modules/.bin/truffle deploy --network in_memory",
+    "deploy-rinkeby": "./node_modules/.bin/truffle migrate --network rinkeby",
+    "deploy-ropsten": "./node_modules/.bin/truffle migrate --network ropsten",
+    "coverage": "./node_modules/.bin/solidity-coverage",
+    "coverage-ci": "./node_modules/.bin/solidity-coverage && cat coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "ethereumjs-util": "^6.1.0",
+    "ethers": "^4.0.27",
+    "openzeppelin-solidity": "^2.1.2",
+    "solc": "^0.5.0",
+    "solidity-coverage": "^0.5.11",
+    "truffle": "^5.0.3",
+    "web3-provider-engine": "^14.1.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
